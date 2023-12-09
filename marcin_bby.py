@@ -1,6 +1,6 @@
 import ipaddress
 import tkinter as tk
-from tkinter import scrolledtext
+from tkinter import scrolledtext, PhotoImage, Toplevel
 
 def to_binary(ip):
     return '.'.join(format(int(octet), '08b') for octet in ip.split('.'))
@@ -62,6 +62,14 @@ def submit_action():
     result_text.insert(tk.INSERT, results)
     result_text.pack()
 
+def open_image_window():
+    image_window = Toplevel(root)
+    image_window.title("Marcin")
+    img = PhotoImage(file="folder/marcin.png")
+    label = tk.Label(image_window, image=img)
+    label.image = img
+    label.pack()
+
 root = tk.Tk()
 root.title("IP Nettverksberegner")
 
@@ -71,5 +79,8 @@ ip_entry.pack()
 
 submit_button = tk.Button(root, text="Submit", command=submit_action)
 submit_button.pack()
+
+dont_press_button = tk.Button(root, text="Marcin", command=open_image_window, fg="white", bg="red")
+dont_press_button.pack(side=tk.RIGHT)
 
 root.mainloop()
