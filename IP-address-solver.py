@@ -65,7 +65,7 @@ def submit_action():
 def open_image_window():
     image_window = Toplevel(root)
     image_window.title("Marcin")
-    img = PhotoImage(file="folder/marcin.png")
+    img = PhotoImage(file="folder/bilde.png")
     label = tk.Label(image_window, image=img)
     label.image = img
     label.pack()
